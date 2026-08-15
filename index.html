@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Resmi - TRIESULA 2026</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.ico">
+    <!-- Import Google Fonts untuk kesan elegan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Link ke file CSS (akan kita buat di tahap selanjutnya) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECTION 1: HERO & LOGO -->
+    <header class="hero-section" id="beranda">
+        <!-- Tempat Logo Himpunan & Logo TRIESULA -->
+        <div class="logo-container">
+            <div class="logo-item">
+                <!-- Ganti 'logo-himpunan.png' dengan path file logo asli Anda -->
+                <img src="assets/logo-himpunan.png" alt="Logo Himpunan" class="logo-img">
+            </div>
+            <div class="logo-item">
+                <!-- Ganti 'logo-triesula.png' dengan path file logo asli Anda -->
+                <img src="assets/logo-triesula.png" alt="Logo TRIESULA" class="logo-img">
+            </div>
+        </div>
+        
+        <!-- Judul Utama -->
+        <div class="hero-content">
+            <p class="hero-subtitle">Undangan Resmi Acara</p>
+            <h1 class="hero-title">TRIESULA 5.0</h1>
+            <p class="hero-year">2026</p>
+        </div>
+
+        <!-- BARU: Nama Tamu Undangan -->
+            <div class="guest-wrapper">
+                <p class="guest-intro">Kepada Yth.</p>
+                <!-- ID 'guestName' ini yang akan dimanipulasi oleh JavaScript -->
+                <h2 class="guest-name" id="guestName">Bapak/Ibu/Saudara/i</h2>
+                <p class="guest-intro">di Tempat</p>
+            </div>
+    </header>
+
+    <!-- SECTION 2: SALAM PEMBUKA & PENJELASAN ACARA -->
+    <section class="about-section" id="tentang">
+        <div class="container">
+            <div class="greeting-box">
+                <h2 class="section-title">Salam Hangat,</h2>
+                <p class="greeting-text">Assalamu'alaikum Warahmatullahi Wabarakatuh,<br>Salam sejahtera bagi kita semua.</p>
+            </div>
+            
+            <div class="description-box">
+                <p>Dengan memanjatkan puji syukur ke hadirat Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan menjadi bagian dari malam puncak <strong>TRIESULA 5.0</strong></p>
+                <p>TRIESULA bukan sekadar acara rutin, melainkan sebuah manifestasi dari dedikasi, karya, dan tali persaudaraan yang telah kita rajut bersama dalam himpunan. Mari ukir kenangan indah dan rayakan pencapaian ini dalam suasana keakraban yang elegan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WAKTU, TEMPAT & COUNTDOWN -->
+    <section class="event-details-section" id="detail">
+        <div class="container">
+            <h2 class="section-title text-center">Waktu & Tempat</h2>
+            <div class="details-grid">
+                
+                <!-- Kartu Tanggal & Countdown -->
+                <div class="detail-card">
+                    <!-- Icon Kalender Elegan (SVG) -->
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Pelaksanaan</h3>
+                    <p class="highlight-text">Sabtu, 22 Agustus 2026</p>
+                    <p class="time-text">Pukul 08.00 WIB - Selesai</p>
+                    
+                    <!-- Area Hitung Mundur (Countdown) dipindah ke sini -->
+                    <div class="countdown-mini-wrapper">
+                        <p class="countdown-label">Menuju Momen Istimewa:</p>
+                        <div id="countdown" class="countdown-mini">
+                            <div class="time-block">
+                                <span id="days">00</span>
+                                <p>Hari</p>
+                            </div>
+                            <div class="time-block">
+                                <span id="hours">00</span>
+                                <p>Jam</p>
+                            </div>
+                            <div class="time-block">
+                                <span id="minutes">00</span>
+                                <p>Menit</p>
+                            </div>
+                            <div class="time-block">
+                                <span id="seconds">00</span>
+                                <p>Detik</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu Lokasi & Link Peta -->
+                <div class="detail-card">
+                    <!-- Icon Pin Peta Elegan (SVG) -->
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Lokasi Acara</h3>
+                    <p class="highlight-text">Villa Pondok Larissa</p>
+                    <p class="address-text">Kawasan Pegunungan Indah, Jawa Barat</p>
+                    
+                    <!-- BARU: View Peta di dalam Kartu -->
+                    <div class="map-iframe-mini">
+                        <!-- Ganti nilai 'src' ini dengan link embed lokasi asli dari Google Maps -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.772242408175!2d106.91246572854824!3d-6.652890915757514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69b7d9ad4be26f%3A0xe6897a3dc5d41600!2sVilla%20Pondok%20Larissa!5e0!3m2!1sen!2sid!4v1786791797750!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Tombol Google Maps -->
+                    <div class="map-action">
+                        <p class="map-label">Atau buka di aplikasi Maps:</p>
+                        <!-- Ganti URL href di bawah ini dengan link Google Maps Villa ABC yang sebenarnya -->
+                        <a href="https://maps.app.goo.gl/iat8s5oi8wbWNc3z5" target="_blank" class="btn-map">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                            </svg>
+                            Buka Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PROPOSAL ACARA -->
+    <section class="proposal-section" id="proposal">
+        <div class="container text-center">
+            <h2 class="section-title">Proposal Acara</h2>
+            <div class="proposal-card">
+                <!-- Icon Dokumen/PDF Elegan -->
+                <div class="proposal-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                
+                <h3 class="proposal-title">Dokumen Rincian Kegiatan</h3>
+                <p class="proposal-text">Untuk mengetahui lebih detail mengenai konsep, tujuan, serta rincian kegiatan TRIESULA 5.0, Anda dapat meninjau dokumen proposal resmi kami.</p>
+                
+                <!-- 
+                  PENTING: Ganti "proposal-triesula.pdf" dengan nama file PDF Anda yang sebenarnya. 
+                  Pastikan file PDF tersebut berada di folder yang sama dengan file index.html 
+                -->
+                <a href="assets/proposal kegiatanTriesula 5.0 FIXX.pdf" target="_blank" class="btn-proposal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    Lihat Proposal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SALAM PENUTUP -->
+    <section class="closing-section" id="penutup">
+        <div class="container text-center">
+            <p class="closing-text">Kehadiran dan doa restu Anda adalah suatu kehormatan dan kebahagiaan terbesar bagi kami. Kami sangat menantikan kehadiran Anda di acara TRIESULA 5.0</p>
+            <div class="signature">
+                <p>Hormat kami,</p>
+                <h2>Panitia TRIESULA 5.0</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; 2026 TRIESULA. Dibuat dengan sepenuh hati.</p>
+    </footer>
+
+    <!-- Link ke file JavaScript (akan kita buat di tahap akhir) -->
+    <script src="script.js"></script>
+</body>
+</html>

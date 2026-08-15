@@ -1,0 +1,505 @@
+/* =========================================================
+   1. CSS VARIABLES & RESET
+   ========================================================= */
+:root {
+    /* Palet Warna Sesuai Permintaan */
+    --verdigris: #3ea795ff;
+    --orange: #fcb043ff;
+    --ivory-mist: #fcf6e4ff;
+    --wheat: #f3dbb9ff;
+    --white: #ffffffff;
+    
+    /* Tambahan warna teks agar mudah dibaca */
+    --text-dark: #2c3e50;
+    --text-muted: #5d6d7e;
+
+    /* Konfigurasi Font */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--ivory-mist);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Utilitas */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.text-center { text-align: center; }
+
+/* Tipografi Umum */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--verdigris);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* =========================================================
+   2. SECTION 1: HERO & LOGO
+   ========================================================= */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--ivory-mist) 0%, var(--wheat) 100%);
+    position: relative;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    /* Animasi muncul perlahan */
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.logo-item {
+    width: 100px;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(62, 167, 149, 0.15);
+    border: 2px solid var(--wheat);
+    padding: 10px;
+}
+
+/* Fallback jika gambar logo tidak ada, ia tetap berbentuk bulat sempurna */
+.logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Hero Text */
+.hero-content {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: var(--verdigris);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.hero-year {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--orange);
+    font-style: italic;
+}
+
+/* =========================================================
+   DESAIN BARU: NAMA TAMU UNDANGAN (DI HERO SECTION)
+   ========================================================= */
+.guest-wrapper {
+    margin-top: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.85); /* Efek semi transparan elegan */
+    padding: 1.5rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--wheat);
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 25px rgba(62, 167, 149, 0.1); /* Bayangan hijau verdigris halus */
+    animation: fadeInUp 2s ease-out; /* Muncul perlahan */
+}
+
+.guest-intro {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.guest-name {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--verdigris);
+    margin: 5px 0;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+/* =========================================================
+   3. SECTION 2: TENTANG & SALAM PEMBUKA
+   ========================================================= */
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--orange);
+    margin: 15px 0 0 0;
+}
+
+.text-center .section-title::after,
+.section-title.text-center::after {
+    margin: 15px auto 0 auto;
+}
+
+.greeting-box {
+    margin-bottom: 3rem;
+}
+
+.greeting-text {
+    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.description-box {
+    column-count: 2;
+    column-gap: 3rem;
+    text-align: justify;
+}
+
+.description-box p {
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+}
+
+/* =========================================================
+   4. SECTION 3: WAKTU, TEMPAT & COUNTDOWN
+   ========================================================= */
+.event-details-section {
+    padding: 6rem 0;
+    background-color: var(--ivory-mist);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.detail-card {
+    background-color: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    border-bottom: 4px solid var(--verdigris);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+}
+
+.detail-icon svg {
+    width: 45px;
+    height: 45px;
+    color: var(--verdigris);
+    margin-bottom: 1rem;
+}
+
+.detail-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.highlight-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verdigris);
+    margin-bottom: 0.5rem;
+}
+
+/* Countdown Styling */
+.countdown-mini-wrapper {
+    width: 100%;
+    margin-top: auto; /* Mendorong elemen ini ke bagian paling bawah kartu */
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--wheat);
+}
+
+.countdown-label, .map-label {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.countdown-mini {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.time-block {
+    background-color: var(--ivory-mist);
+    padding: 0.8rem 0.5rem;
+    border-radius: 8px;
+    min-width: 70px;
+    border: 1px solid var(--wheat);
+}
+
+.time-block span {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.time-block p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* =========================================================
+   DESAIN BARU: TOMBOL GOOGLE MAPS
+   ========================================================= */
+.map-action {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--wheat);
+}
+
+.btn-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--verdigris);
+    border: 1px solid var(--verdigris);
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-map:hover {
+    background-color: var(--verdigris);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(62, 167, 149, 0.2);
+}
+
+
+/* =========================================================
+   5. SECTION 4: PENUTUP & FOOTER
+   ========================================================= */
+.closing-section {
+    padding: 6rem 0;
+    background-color: var(--wheat);
+}
+
+.closing-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signature p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.signature h2 {
+    font-size: 2.5rem;
+    color: var(--verdigris);
+}
+
+.site-footer {
+    background-color: var(--verdigris);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* =========================================================
+   5. SECTION 4: PROPOSAL ACARA
+   ========================================================= */
+.proposal-section {
+    padding: 6rem 0;
+    background-color: var(--white); /* Memberikan variasi warna setelah section ivory-mist sebelumnya */
+}
+
+.proposal-card {
+    background-color: var(--ivory-mist);
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    border: 1px solid var(--wheat);
+    border-bottom: 4px solid var(--orange); /* Menggunakan orange sebagai aksen pembeda */
+    transition: transform 0.3s ease;
+}
+
+.proposal-card:hover {
+    transform: translateY(-5px);
+}
+
+.proposal-icon svg {
+    width: 60px;
+    height: 60px;
+    color: var(--verdigris);
+    margin-bottom: 1rem;
+}
+
+.proposal-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.proposal-text {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Tombol Proposal Elegan (Bentuk Kapsul) */
+.btn-proposal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verdigris);
+    color: var(--white);
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px; /* Membulat penuh untuk kesan modern */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(62, 167, 149, 0.3);
+}
+
+.btn-proposal:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    box-shadow: 0 10px 20px rgba(252, 176, 67, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Responsif Mobile untuk Proposal */
+@media screen and (max-width: 768px) {
+    .proposal-card {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* =========================================================
+   6. ANIMASI KEYFRAMES
+   ========================================================= */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   7. RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .description-box {
+        column-count: 1; /* Di mobile teks menjadi 1 kolom saja */
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr; /* Di mobile kartu ditumpuk ke bawah */
+    }
+
+    .time-block {
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+
+    .time-block span {
+        font-size: 2rem;
+    }
+
+    .countdown-timer {
+        gap: 1rem;
+    }
+}
