@@ -73,3 +73,29 @@ if (guestNameParam && guestNameParam.trim() !== '') {
     // Mengganti teks default dengan nama dari link URL
     guestNameElement.innerHTML = guestNameParam;
 }
+
+// =========================================================
+// FITUR ANIMASI SCROLL (REVEAL)
+// =========================================================
+
+function revealElements() {
+    // Mencari semua elemen yang memiliki kelas 'reveal'
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight; // Tinggi layar
+        var elementTop = reveals[i].getBoundingClientRect().top; // Jarak elemen dari atas layar
+        var elementVisible = 100; // Elemen akan muncul ketika berjarak 100px dari bawah layar
+
+        // Jika elemen sudah masuk jangkauan layar, tambahkan kelas 'active'
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+// Menjalankan fungsi setiap kali pengguna melakukan scroll
+window.addEventListener("scroll", revealElements);
+
+// Memanggil fungsi sekali saat halaman pertama kali dimuat
+revealElements();
