@@ -269,7 +269,7 @@ p {
 /* Countdown Styling */
 .countdown-mini-wrapper {
     width: 100%;
-    margin-top: auto; /* Mendorong elemen ini ke bagian paling bawah kartu */
+    margin-top: 2rem; /* Mendorong elemen ini ke bagian paling bawah kartu */
     padding-top: 1.5rem;
     border-top: 1px solid var(--wheat);
 }
@@ -340,7 +340,7 @@ p {
    ========================================================= */
 .map-action {
     width: 100%;
-    margin-top: auto;
+    margin-top: 2rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--wheat);
 }
