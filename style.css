@@ -403,10 +403,11 @@ p {
 }
 
 .bank-logo {
-    height: 35px; /* Mengunci tinggi logo agar seragam dan proporsional */
-    object-fit: contain; /* Memastikan logo tidak gepeng/distorsi */
+    height: 26px; /* Dikecilkan agar lebih proporsional dengan teks */
+    max-width: 120px; /* Batas maksimal lebar agar logo tidak melar */
+    object-fit: contain; 
     margin-bottom: 1.2rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); /* Memberi bayangan halus pada logo */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); 
 }
 
 /* Desain Kartu Rekening (Menyerupai kartu pembayaran digital) */
@@ -759,8 +760,32 @@ p {
         padding: 2.5rem 1.5rem; /* Mengurangi padding agar tidak sempit */
     }
     
-    .account-box {
-        min-width: 100%; /* Kartu rekening memanjang penuh di HP */
+    /* Mengecilkan logo bank khusus di layar HP */
+    .bank-logo {
+        height: 22px; 
         margin-bottom: 1rem;
+    }
+
+    /* Memaksa kartu rekening menjadi 2 kolom (kiri-kanan) di HP */
+    .bank-accounts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem; /* Jarak antar kartu sedikit dirapatkan */
+    }
+
+    .account-box {
+        min-width: unset; /* Menghapus aturan lebar 100% sebelumnya */
+        margin-bottom: 0;
+        padding: 1.2rem 0.5rem; /* Mengurangi ruang kosong agar pas di layar sempit */
+    }
+
+    /* Penyesuaian ukuran teks agar muat di dalam kotak yang mengecil */
+    .account-number {
+        font-size: 1.05rem; /* Mengecilkan ukuran nomor rekening */
+    }
+
+    .account-holder {
+        font-size: 0.65rem; /* Mengecilkan ukuran nama pemilik */
+        letter-spacing: 0.5px;
     }
 }
