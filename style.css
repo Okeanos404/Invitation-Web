@@ -661,7 +661,7 @@ p {
     }
     
     .pdf-preview-container {
-        height: 350px; /* Dibuat sedikit lebih pendek di mobile agar mudah di-scroll layarnya */
+        display: none; /* Disembunyikan di HP karena browser HP tidak mendukung preview PDF */
     }
 }
 
