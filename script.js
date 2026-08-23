@@ -80,33 +80,44 @@ if (guestNameParam && guestNameParam.trim() !== '') {
 
 // Animasi Hero Section saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
+    // Tambahkan perspektif 3D ke parent kontainer logo agar putarannya terlihat berdimensi
+    const logoContainer = document.querySelector('.logo-container');
+    if(logoContainer) logoContainer.style.perspective = "1000px";
+
     // Set awal elemen hero agar tidak terlihat sebelum dianimasikan
-    anime.set(['.logo-item', '.hero-content', '.guest-wrapper'], { opacity: 0, translateY: 30 });
+    anime.set(['.logo-item', '.hero-content', '.guest-wrapper'], { opacity: 0 });
 
     const timeline = anime.timeline({
-        easing: 'easeOutExpo',
         duration: 1500
     });
 
-    // Animasikan Logo terlebih dahulu
+    // Animasikan Logo (Efek Putar 3D seperti Koin)
     timeline
     .add({
         targets: '.logo-item',
         opacity: [0, 1],
-        translateY: [-30, 0],
+        translateY: [-50, 0],
+        rotateY: [-90, 0], // Berputar 3D dari sumbu Y
+        easing: 'easeOutElastic(1, .6)', // Efek memantul
         delay: anime.stagger(200) // Beri jeda antar logo
     })
-    // Disusul oleh Hero Content
+    // Disusul oleh Hero Content (Efek Tumbuh dan Terbalik 3D)
     .add({
         targets: '.hero-content',
         opacity: [0, 1],
-        translateY: [30, 0],
-    }, '-=1000') // Mulai lebih awal 1000ms agar saling overlap perlahan
-    // Disusul oleh Guest Wrapper
+        translateY: [50, 0],
+        scale: [0.8, 1],
+        rotateX: [30, 0], // Terbalik sedikit ke depan
+        easing: 'easeOutExpo',
+    }, '-=1200') 
+    // Disusul oleh Guest Wrapper (Efek Ayunan Kertas)
     .add({
         targets: '.guest-wrapper',
         opacity: [0, 1],
-        translateY: [30, 0],
+        translateY: [40, 0],
+        rotateX: [-40, 0],
+        scale: [0.9, 1],
+        easing: 'easeOutExpo',
     }, '-=1000');
 });
 
@@ -120,17 +131,25 @@ const revealOptions = {
 const revealCallback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Animasikan elemen yang muncul menggunakan Anime.js
+            // Berikan perspektif 3D ke elemen induk dari target agar rotasinya nyata
+            if(entry.target.parentNode) {
+                entry.target.parentNode.style.perspective = "1200px";
+            }
+
+            // Animasikan elemen yang muncul menggunakan Anime.js dengan efek 3D
             anime({
                 targets: entry.target,
                 opacity: [0, 1],
-                translateY: [40, 0],
-                easing: 'easeOutExpo',
-                duration: 1200,
+                translateY: [80, 0],
+                translateZ: [50, 0],
+                rotateX: [35, 0], // Terbuka seperti pintu / flip 3D
+                scale: [0.85, 1],
+                easing: 'easeOutElastic(1, .8)', // Memantul elegan
+                duration: 1400,
                 delay: parseInt(entry.target.dataset.delay) || 0
             });
             
-            // Stop observasi setelah elemen dianimasikan sekali (agar tidak berulang terus saat di-scroll naik turun)
+            // Stop observasi setelah elemen dianimasikan sekali
             observer.unobserve(entry.target);
         }
     });
