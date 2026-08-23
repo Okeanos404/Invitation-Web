@@ -74,8 +74,6 @@ p {
     margin-bottom: 2rem;
     align-items: center;
     justify-content: center;
-    /* Animasi muncul perlahan */
-    animation: fadeInDown 1.5s ease-out;
 }
 
 .logo-item {
@@ -99,9 +97,6 @@ p {
 }
 
 /* Hero Text */
-.hero-content {
-    animation: fadeInUp 1.5s ease-out;
-}
 
 .hero-subtitle {
     font-family: var(--font-body);
@@ -139,7 +134,6 @@ p {
     display: inline-block;
     backdrop-filter: blur(5px);
     box-shadow: 0 10px 25px rgba(62, 167, 149, 0.1); /* Bayangan hijau verdigris halus */
-    animation: fadeInUp 2s ease-out; /* Muncul perlahan */
 }
 
 .guest-intro {
@@ -657,32 +651,11 @@ p {
 }
 
 /* =========================================================
-   6. ANIMASI KEYFRAMES
-   ========================================================= */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================================================
    ANIMASI SCROLL (REVEAL)
    ========================================================= */
-/* Menyembunyikan elemen awalnya dan menggeser sedikit ke bawah */
+/* Menyembunyikan elemen awalnya untuk dianimasikan oleh Anime.js */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
-}
-
-/* Kelas yang akan ditambahkan oleh JavaScript saat elemen terlihat */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* =========================================================
