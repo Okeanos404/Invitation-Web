@@ -618,6 +618,17 @@ p {
     line-height: 1.7;
 }
 
+/* Container untuk Preview PDF */
+.pdf-preview-container {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--wheat);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
 /* Tombol Proposal Elegan (Bentuk Kapsul) */
 .btn-proposal {
     display: inline-flex;
@@ -647,6 +658,10 @@ p {
 @media screen and (max-width: 768px) {
     .proposal-card {
         padding: 3rem 1.5rem;
+    }
+    
+    .pdf-preview-container {
+        height: 350px; /* Dibuat sedikit lebih pendek di mobile agar mudah di-scroll layarnya */
     }
 }
 
