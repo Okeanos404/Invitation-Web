@@ -5,7 +5,7 @@
 // Menentukan tanggal target acara: 21 Agustus 2026, pukul 18:00:00 WIB
 // Format bulan pada JS dimulai dari 0 (0 = Januari, 7 = Agustus)
 // Namun, lebih mudah dan aman menggunakan string format ISO atau standar bahasa Inggris.
-const targetDate = new Date("September 12, 2026 08:00:00").getTime();
+const targetDate = new Date("September 5, 2026 08:00:00").getTime();
 
 // Fungsi untuk memperbarui hitung mundur setiap 1 detik
 const countdownTimer = setInterval(function() {
